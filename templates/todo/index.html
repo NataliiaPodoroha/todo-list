@@ -27,7 +27,7 @@
       Created at:
       <span style="color: gray">{{ task.created_at }}</span>
     </p>
-    {% if task.deadline and task.is_completed == False %}
+    {% if task.deadline and not task.is_completed %}
       <p>
         Deadline:
         <span style="color: gray">{{ task.deadline }}</span>
