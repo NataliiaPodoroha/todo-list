@@ -18,8 +18,8 @@ class TaskForm(forms.ModelForm):
         fields = [
             "content",
             "deadline",
+            "is_completed",
             "tag",
-            "is_completed"
         ]
 
 
