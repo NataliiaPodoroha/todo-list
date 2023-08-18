@@ -10,7 +10,7 @@ class TaskForm(forms.ModelForm):
     )
     deadline = forms.DateField(
         required=False,
-        widget=forms.DateTimeInput(attrs={'type': 'date'}),
+        widget=forms.DateTimeInput(attrs={"type": "date"}),
     )
 
     class Meta:
@@ -24,7 +24,6 @@ class TaskForm(forms.ModelForm):
 
 
 class TagForm(forms.ModelForm):
-
     class Meta:
         model = Tag
         fields = "__all__"
