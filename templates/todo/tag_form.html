@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <section class="pt-9 position-relative">
+    <div class="container">
+      <h1 class="pb-3">{{ object|yesno:"Update,Create" }} tag</h1>
+      <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+    </div>
+  </section>
+{% endblock %}
