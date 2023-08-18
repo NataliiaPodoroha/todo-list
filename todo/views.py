@@ -35,12 +35,10 @@ class ToggleTaskStatusView(generic.View):
     def post(self, request, pk):
         task = get_object_or_404(Task, id=pk)
 
-        task.is_completed = False if task.is_completed else True
+        task.is_completed = not task.is_completed
         task.save()
 
-        return HttpResponseRedirect(
-            reverse_lazy("todo:task-list")
-        )
+        return HttpResponseRedirect(reverse_lazy("todo:task-list"))
 
 
 class TagListView(generic.ListView):
